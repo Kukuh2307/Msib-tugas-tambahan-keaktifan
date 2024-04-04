@@ -74,8 +74,7 @@
                 <!-- penghasilan orang tua -->
                 <div class="form-row">
                     <label for="penghasilan_orang_tua">9. Penghasilan orang tua <span>*</span></label>
-                    <p style="margin-top: 5px; font-size: 12px; color:#7b7b7b"><i>- Angka pertama jutaan <br>- Angka kedua ratusan</i><br><i>- Jika gaji lebih dari 4 Juta, cukup tuliskan 5 Juta</i></p>
-                    <input class="full-input" type="text" placeholder="Penghasilan orang tua" name="penghasilan_orang_tua" id="penghasilan_orang_tua" maxlength="2" required>
+                    <input class="full-input" type="text" placeholder="Penghasilan orang tua" name="penghasilan_orang_tua" id="penghasilan_orang_tua" required>
                 </div>
 
                 <!-- nilai -->
@@ -105,18 +104,13 @@
         </div>
     </div>
     <script>
-        // Tambahkan event listener untuk input penghasilan orang tua
         document.getElementById('penghasilan_orang_tua').addEventListener('input', function() {
-            let input = this.value;
-
-            // Hapus semua tanda titik
-            input = input.replace(/\./g, '');
-
-            // Ambil dua digit pertama dari nilai input
-            let processedValue = input.substring(0, 2);
-
-            // Set nilai input kembali
-            this.value = processedValue;
+            // Batasi panjang input menjadi delapan digit
+            if (this.value.length > 8) {
+                this.value = this.value.slice(0, 8);
+            }
+            // Hapus karakter selain angka
+            this.value = this.value.replace(/\D/g, '');
         });
     </script>
 </body>

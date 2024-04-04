@@ -74,13 +74,38 @@ if (isset($_SESSION['user'])) {
                 <input type="text" id="pekerjaan_orang_tua" name="pekerjaan_orang_tua" value="<?= $data['pekerjaan_orang_tua'] ?>" readonly>
             </div>
             <div class="item">
+                <?php
+                $penghasilan_orang_tua = (string) $data['penghasilan_orang_tua'];
+                $penghasilan_orang_tua = substr($penghasilan_orang_tua, 0, 2);
+
+                // Keterangan penghasilan orang tua
+                if ($penghasilan_orang_tua <= 20) {
+                    $keterangan_penghasilan = "Tidak mampu";
+                } elseif ($penghasilan_orang_tua >= 21 && $penghasilan_orang_tua <= 40) {
+                    $keterangan_penghasilan = "Kurang mampu";
+                } else {
+                    $keterangan_penghasilan = "Mampu";
+                }
+                ?>
                 <label for="penghasilan_orang_tua">Penghasilan orang tua </label>
-                <input type="text" id="penghasilan_orang_tua" name="penghasilan_orang_tua" value="<?= $data['penghasilan_orang_tua'] ?>" readonly>
+                <input type="text" id="penghasilan_orang_tua" name="penghasilan_orang_tua" value="<?= $keterangan_penghasilan ?>" readonly>
             </div>
             <hr>
             <div class="item">
-                <label for="nilai">Nilai rata-rata ujiaan </label>
-                <input type="text" id="nilai" name="nilai" value="<?= $data['nilai'] ?>" readonly>
+                <?php
+                $nilai = $data['nilai'];
+                if ($nilai >= 90 && $nilai <= 100) {
+                    $nilai = "Pintar";
+                } elseif ($nilai >= 80 && $nilai <= 89) {
+                    $nilai = "Cukup pintar";
+                } elseif ($nilai >= 60 && $nilai <= 79) {
+                    $nilai = "Rata-rata";
+                } else {
+                    $nilai = "Penangan khusus";
+                }
+                ?>
+                <label for="nilai">Nilai rata-rata ujian </label>
+                <input type="text" id="nilai" name="nilai" value="<?= $nilai ?>" readonly>
             </div>
             <div class="item">
                 <label for="major">Program studi </label>
@@ -94,11 +119,6 @@ if (isset($_SESSION['user'])) {
             <button><a href="proses.php?aksi=logout">Simpan</a></button>
         </div>
     </div>
-
-
-
-
-
 </body>
 
 </html>

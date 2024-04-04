@@ -21,25 +21,6 @@ class Database
 
     function input($nama, $email, $password, $noWa, $tempat_lahir, $date, $nama_orang_tua, $pekerjaan_orang_tua, $penghasilan_orang_tua, $nilai, $major, $alamat)
     {
-        // cek penghasilan orang tua
-        if ($penghasilan_orang_tua <= 20) {
-            $penghasilan_orang_tua = "Tidak mamapu";
-        } elseif ($penghasilan_orang_tua >= 21 && $penghasilan_orang_tua <= 40) {
-            $penghasilan_orang_tua = "Kurang mampu";
-        } else {
-            $penghasilan_orang_tua = "Mampu";
-        }
-
-        // cek nilai
-        if ($nilai >= 90 && $nilai <= 100) {
-            $nilai = "Pintar";
-        } elseif ($nilai >= 80 && $nilai <= 89) {
-            $nilai = "Cukup pintar";
-        } elseif ($nilai >= 60 && $nilai <= 79) {
-            $nilai = "Rata-rata";
-        } else {
-            $nilai = "Penangann khussus";
-        }
 
         $stmt = $this->conn->prepare("INSERT INTO mahasiswa (nama, email, password, noWa, tempat_lahir, date, nama_orang_tua, pekerjaan_orang_tua, penghasilan_orang_tua, nilai, major, alamat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssssssssss", $nama, $email, $password, $noWa, $tempat_lahir, $date, $nama_orang_tua, $pekerjaan_orang_tua, $penghasilan_orang_tua, $nilai, $major, $alamat);
@@ -110,31 +91,10 @@ class Database
 
     function update($id, $nama, $email, $noWa, $tempat_lahir, $nama_orang_tua, $pekerjaan_orang_tua, $penghasilan_orang_tua, $nilai, $major, $alamat)
     {
-        // cek penghasilan orang tua
-        if ($penghasilan_orang_tua <= 20) {
-            $penghasilan_orang_tua = "Tidak mamapu";
-        } elseif ($penghasilan_orang_tua >= 21 && $penghasilan_orang_tua <= 40) {
-            $penghasilan_orang_tua = "Kurang mampu";
-        } else {
-            $penghasilan_orang_tua = "Mampu";
-        }
-
-        // cek nilai
-        if ($nilai >= 90 && $nilai <= 100) {
-            $nilai = "Pintar";
-        } elseif ($nilai >= 80 && $nilai <= 89) {
-            $nilai = "Cukup pintar";
-        } elseif ($nilai >= 60 && $nilai <= 79) {
-            $nilai = "Rata-rata";
-        } else {
-            $nilai = "Penangan khusus";
-        }
 
         $stmt = $this->conn->prepare("UPDATE mahasiswa SET nama=?, email=?, noWa=?, tempat_lahir=?, nama_orang_tua=?, pekerjaan_orang_tua=?, penghasilan_orang_tua=?, nilai=?, major=?, alamat=? WHERE id=?");
         $stmt->bind_param("ssssssssssi", $nama, $email, $noWa, $tempat_lahir, $nama_orang_tua, $pekerjaan_orang_tua, $penghasilan_orang_tua, $nilai, $major, $alamat, $id);
         $stmt->execute();
-
-        // mysqli_query($this->conn, "UPDATE mahasiswa SET nama='$nama', email='$email', noWa='$noWa', tempat_lahir='$tempat_lahir',nama_orang_tua='$nama_orang_tua', pekerjaan_orang_tua='$pekerjaan_orang_tua', penghasilan_orang_tua='$penghasilan_orang_tua', nilai='$nilai', major='$major', alamat='$alamat' WHERE id='$id'");
         header('Location: login.php');
         exit();
     }

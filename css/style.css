@@ -1,0 +1,84 @@
+body {
+  font-family: sans-serif;
+  background-image: url("https://1.bp.blogspot.com/-Ci8G63L7bTY/XkPuvZ4LeAI/AAAAAAAAAak/H_bBZjZJ0X4ya_mV659EsDBMnQXLcxWDQCLcBGAsYHQ/s320/132407.jpg");
+  background-size: cover;
+}
+div {
+  margin-top: -15px;
+}
+.container {
+  width: 800px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 0 14px;
+  box-sizing: border-box;
+}
+.header {
+  width: 100%;
+  background-color: royalblue;
+  text-align: center;
+  padding: 20px 0;
+  color: #fff;
+}
+.content {
+  background-color: #fff;
+  padding: 25px 50px 50px 30px;
+  line-height: 24px;
+}
+.content span {
+  color: red;
+  font-weight: bold;
+}
+label {
+  display: block;
+  padding: 10px 0;
+}
+.form-row {
+  padding-right: 40px;
+  margin-bottom: 50px;
+}
+.full-input {
+  width: 100%;
+  margin-left: 18px;
+  padding: 12px;
+}
+input[type="radio"] {
+  margin-left: 18px;
+  margin-right: 8px;
+  margin-bottom: 14px;
+}
+.italic {
+  margin-left: 18px;
+  margin-top: -10px;
+  font-size: 14px;
+  font-style: italic;
+  color: #555;
+}
+.short-input {
+  width: 100px;
+  margin: 0 18px 0 0;
+  padding: 12px;
+}
+.form-submit {
+  margin-top: 50px;
+  margin-left: 18px;
+}
+.form-submit button {
+  padding: 14px 38px;
+  background-color: #006db2;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.form-submit button:hover {
+  background-color: #008272;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+  .container .header h1 {
+    font-size: 22px;
+  }
+}

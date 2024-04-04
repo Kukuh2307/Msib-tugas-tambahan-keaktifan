@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  /* min-hieght: 100vh; */
+  font-family: "Montserrat", sans-serif;
+}
+.navbar {
+  width: 70%;
+  margin: auto;
+  overflow-x: visible;
+  /* background-color: salmon; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 5rem;
+  border-bottom: 7px solid royalblue;
+  color: #555;
+}
+.navbar h1 {
+  font-size: 25px;
+}
+.navbar .user h2 {
+  font-weight: 500;
+  font-style: bold;
+}
+
+.card-header {
+  width: 60%;
+  background-color: royalblue;
+  margin: 5rem auto 1rem;
+  border-radius: 10px;
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.card-content {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+.item label {
+  display: inline;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-right: 10rem;
+  box-sizing: border-box;
+}
+.item input,
+.item textarea {
+  display: inline;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 2px solid royalblue;
+  margin-top: 1rem;
+  background-color: #e3e3e3;
+}
+hr {
+  margin-bottom: 20px;
+  border: 5px solid royalblue;
+  margin-top: 1rem;
+}
+button {
+  background-color: royalblue;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 10px;
+}
+button a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+}

@@ -93,7 +93,6 @@ if (isset($_SESSION['user'])) {
             <button class="edit"><a href="edit.php">Edit</a></button>
             <button><a href="proses.php?aksi=logout">Simpan</a></button>
         </div>
-        >>>>>>> edit
     </div>
 
 

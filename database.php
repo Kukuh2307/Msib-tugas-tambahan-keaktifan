@@ -41,18 +41,9 @@ class Database
             $nilai = "Penangann khussus";
         }
 
-
-        // Gunakan prepared statement
         $stmt = $this->conn->prepare("INSERT INTO mahasiswa (nama, email, password, noWa, tempat_lahir, date, nama_orang_tua, pekerjaan_orang_tua, penghasilan_orang_tua, nilai, major, alamat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-        // Bind parameter ke prepared statement
         $stmt->bind_param("ssssssssssss", $nama, $email, $password, $noWa, $tempat_lahir, $date, $nama_orang_tua, $pekerjaan_orang_tua, $penghasilan_orang_tua, $nilai, $major, $alamat);
-
-
-        // Eksekusi pernyataan
         $stmt->execute();
-
-        // Redirect ke halaman login setelah input berhasil
         header('Location: login.php');
     }
 

@@ -74,6 +74,13 @@ class Database
         }
     }
 
+    function logout()
+    {
+        session_destroy();
+        header('Location: login.php');
+        exit();
+    }
+
 
     function display()
     {
@@ -122,7 +129,7 @@ class Database
         } elseif ($nilai >= 60 && $nilai <= 79) {
             $nilai = "Rata-rata";
         } else {
-            $nilai = "Penangan khussus";
+            $nilai = "Penangan khusus";
         }
 
         $stmt = $this->conn->prepare("UPDATE mahasiswa SET nama=?, email=?, noWa=?, tempat_lahir=?, nama_orang_tua=?, pekerjaan_orang_tua=?, penghasilan_orang_tua=?, nilai=?, major=?, alamat=? WHERE id=?");

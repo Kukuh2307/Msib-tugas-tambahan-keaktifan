@@ -90,8 +90,8 @@ if (isset($_SESSION['user'])) {
         }
         ?>
         <div class="flex">
-            <button><a href="edit.php">Edit</a></button>
-            <button><a href="login.php">Simpan</a></button>
+            <button class="edit"><a href="edit.php">Edit</a></button>
+            <button><a href="proses.php?aksi=logout">Simpan</a></button>
         </div>
     </div>
 

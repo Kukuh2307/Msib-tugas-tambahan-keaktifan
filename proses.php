@@ -26,19 +26,6 @@ try {
     } elseif ($aksi == 'login') {
         $db->login($_POST['email'], $_POST['password']);
     } elseif ($aksi == 'update') {
-        // echo $_POST['id'];
-        // echo $_POST['nama'];
-        // echo $_POST['email'];
-        // echo $_POST['noWa'];
-        // echo $_POST['tempat_lahir'];
-        // echo $_POST['date'];
-        // echo $_POST['nama_orang_tua'];
-        // echo $_POST['pekerjaan_orang_tua'];
-        // echo $_POST['penghasilan_orang_tua'];
-        // echo $_POST['nilai'];
-        // echo $_POST['major'];
-        // echo $_POST['alamat'];
-
         $db->update(
             $_POST['id'],
             $_POST['nama'],
@@ -52,6 +39,8 @@ try {
             $_POST['major'],
             $_POST['alamat']
         );
+    } elseif ($aksi == 'logout') {
+        $db->logout();
     } else {
         echo "gagal";
     }

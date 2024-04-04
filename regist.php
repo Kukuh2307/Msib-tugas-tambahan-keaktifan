@@ -73,8 +73,8 @@
 
                 <!-- penghasilan orang tua -->
                 <div class="form-row">
-                    <label for="penghasilan_orang_tua">Penghasilan orang tua <span>*</span></label>
-                    <p style="margin-top: 5px; font-size: 12px; color:#7b7b7b"><i>- Angka pertama jutaan <br>- Angka kedua ratusan</i></p>
+                    <label for="penghasilan_orang_tua">9. Penghasilan orang tua <span>*</span></label>
+                    <p style="margin-top: 5px; font-size: 12px; color:#7b7b7b"><i>- Angka pertama jutaan <br>- Angka kedua ratusan</i><br><i>- Jika gaji lebih dari 4 Juta, cukup tuliskan 5 Juta</i></p>
                     <input class="full-input" type="text" placeholder="Penghasilan orang tua" name="penghasilan_orang_tua" id="penghasilan_orang_tua" maxlength="2" required>
                 </div>
 

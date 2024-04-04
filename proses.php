@@ -25,6 +25,22 @@ try {
         );
     } elseif ($aksi == 'login') {
         $db->login($_POST['email'], $_POST['password']);
+    } elseif ($aksi == 'update') {
+        $db->update(
+            $_POST['id'],
+            $_POST['nama'],
+            $_POST['email'],
+            $_POST['noWa'],
+            $_POST['tempat_lahir'],
+            $_POST['nama_orang_tua'],
+            $_POST['pekerjaan_orang_tua'],
+            $_POST['penghasilan_orang_tua'],
+            $_POST['nilai'],
+            $_POST['major'],
+            $_POST['alamat']
+        );
+    } elseif ($aksi == 'logout') {
+        $db->logout();
     } else {
         echo "gagal";
     }

@@ -89,7 +89,11 @@ if (isset($_SESSION['user'])) {
         <?php
         }
         ?>
-        <button><a href="login.php">Simpan</a></button>
+        <div class="flex">
+            <button class="edit"><a href="edit.php">Edit</a></button>
+            <button><a href="proses.php?aksi=logout">Simpan</a></button>
+        </div>
+        >>>>>>> edit
     </div>
 
 

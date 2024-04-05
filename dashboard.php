@@ -75,13 +75,12 @@ if (isset($_SESSION['user'])) {
             </div>
             <div class="item">
                 <?php
-                $penghasilan_orang_tua = (string) $data['penghasilan_orang_tua'];
-                $penghasilan_orang_tua = substr($penghasilan_orang_tua, 0, 2);
+                $penghasilan_orang_tua = $data['penghasilan_orang_tua'];
 
                 // Keterangan penghasilan orang tua
-                if ($penghasilan_orang_tua <= 20) {
+                if ($penghasilan_orang_tua <= 2000000) {
                     $keterangan_penghasilan = "Tidak mampu";
-                } elseif ($penghasilan_orang_tua >= 21 && $penghasilan_orang_tua <= 40) {
+                } elseif ($penghasilan_orang_tua >= 2100000 && $penghasilan_orang_tua <= 40000000) {
                     $keterangan_penghasilan = "Kurang mampu";
                 } else {
                     $keterangan_penghasilan = "Mampu";
